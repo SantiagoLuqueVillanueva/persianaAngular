@@ -1,2 +1,2 @@
-<p>habitacion works!</p>
-<app-persiana></app-persiana>
+<p class="corriente" [class.on]="corriente()" [class.off]="!corriente()">Corriente: {{ corriente() ? 'ON' : 'OFF' }}</p>
+<app-persiana [corrienteHab]="corriente()" (estadoCambiado)="onEstadoPersiana($event)"></app-persiana>

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, input, output } from '@angular/core';
 import { PersianaComponent } from "./persiana/persiana.component";
 
 @Component({
@@ -8,5 +8,10 @@ import { PersianaComponent } from "./persiana/persiana.component";
   styleUrl: './habitacion.component.css'
 })
 export class HabitacionComponent {
+  corriente = input<boolean>(false);
+  estadoPersiana = output<boolean>();
 
+  onEstadoPersiana (estado: boolean) {
+    this.estadoPersiana.emit(estado);
+  }
 }

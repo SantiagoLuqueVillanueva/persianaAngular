@@ -1,1 +1,9 @@
-<p>persiana works!</p>
+<div class="persiana">
+  <div class="controles">
+    <button class="btn" (click)="subirPersiana()">Subir</button>
+    <button class="btn" (click)="bajarPersiana()">Bajar</button>
+  </div>
+  <div class="info">
+    <span class="estado" [class.subida]="estadoPersiana">Estado: {{this.estadoPersiana ? 'Subida' : 'Bajada'}}</span>
+  </div>
+</div>
