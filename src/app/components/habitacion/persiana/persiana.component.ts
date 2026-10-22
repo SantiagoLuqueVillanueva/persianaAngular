@@ -11,16 +11,9 @@ export class PersianaComponent {
   corrienteHab = input<boolean>(false);
   estadoCambiado = output<boolean>();
 
-  subirPersiana() {
+  subirBajarPersiana() {
     if (this.corrienteHab()) {
-      this.estadoPersiana = true;
-      this.estadoCambiado.emit(this.estadoPersiana);
-    }
-  }
-
-  bajarPersiana() {
-    if (this.corrienteHab()) {
-      this.estadoPersiana = false;
+      this.estadoPersiana = !this.estadoPersiana;
       this.estadoCambiado.emit(this.estadoPersiana);
     }
   }

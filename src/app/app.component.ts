@@ -15,18 +15,17 @@ export class AppComponent {
   estadoPersianaRecibido = false;
 
   onConectarDesconectar(event: Event) {
-    let conDes = event.target as HTMLButtonElement;
-
     this.corrienteVivienda = !this.corrienteVivienda;
-    conDes.innerText = this.corrienteVivienda ? 'Desconectar' : 'Conectar';
+
+    if (!this.corrienteVivienda) {
+      this.corrienteHabitacion = false;
+    }
   }
 
   onConectarDesconectarHab(event: Event) {
-    let conDes = event.target as HTMLButtonElement;
 
     if (this.corrienteVivienda) {
       this.corrienteHabitacion = !this.corrienteHabitacion;
-      conDes.innerText = this.corrienteHabitacion ? 'Desconectar' : 'Conectar';
     }
   }
 
